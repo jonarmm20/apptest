@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+	<div id="test">It's a Test</div>
+	<button onclick="test()">Click</button>
+
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	
+
+	function test(){
+
+		$.ajax({
+			url: 'http://scangoo.com/apptest.php',
+			beforeSend: function(){
+				$("#test").html("Cargando...")
+			},
+			success: function(res){
+					$("#test").html(res)
+					console.log(res)
+			}
+		});
+
+	}
+
+
+</script>
+</body>
+</html>
